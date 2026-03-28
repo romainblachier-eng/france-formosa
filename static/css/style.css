@@ -559,10 +559,10 @@ body {
 :root {
     --navy: #0f1a2e;
     --navy-light: #1a2a44;
-    --blue: #2563eb;
-    --blue-light: #3b82f6;
-    --gold: #c9a84c;
-    --gold-light: #d4b968;
+    --blue: #003a8c;
+    --blue-light: #1a56b0;
+    --gold: #c42032;
+    --gold-light: #dc3545;
     --white: #ffffff;
     --gray-50: #f8fafc;
     --gray-100: #f1f5f9;
@@ -793,7 +793,7 @@ body {
 
 .axe-card:hover {
     border-color: var(--blue);
-    box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+    box-shadow: 0 4px 24px rgba(0,58,140,0.08);
 }
 
 .axe-icon {
@@ -1007,7 +1007,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    box-shadow: 0 0 0 3px rgba(0,58,140,0.1);
 }
 
 .form-group textarea { resize: vertical; }
