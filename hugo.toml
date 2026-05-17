@@ -5,7 +5,7 @@ defaultContentLanguage = "fr"
 enableRobotsTXT = true
 
 [params]
-  description = "Think tank dédié aux relations franco-taïwanaises"
+  description = "Dédié aux relations franco-taïwanaises"
   author = "France Formosa"
 
 [markup]
