@@ -113,6 +113,10 @@ other = "留言內容"
 other = "請輸入您的留言..."
 [form_submit]
 other = "送出訊息"
+[form_success_title]
+other = "訊息已送出！"
+[form_success_desc]
+other = "感謝您的來信，我們將盡快回覆您。"
 
 # Footer
 [footer_tagline]

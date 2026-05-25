@@ -113,6 +113,10 @@ other = "Message"
 other = "Votre message..."
 [form_submit]
 other = "Envoyer le message"
+[form_success_title]
+other = "Message envoyé !"
+[form_success_desc]
+other = "Merci pour votre message. Nous vous répondrons dans les meilleurs délais."
 
 # Footer
 [footer_tagline]
