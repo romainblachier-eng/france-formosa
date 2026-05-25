@@ -14,7 +14,7 @@
                 <div class="contact-details">
                     <div class="contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                        <a href="mailto:romain.blachier@lapinbleu.art">romain.blachier@lapinbleu.art</a>
+                        <a href="mailto:romain.blachier@gmail.com">romain.blachier@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
@@ -23,11 +23,12 @@
                 </div>
             </div>
             <div class="contact-form-wrapper">
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p class="hidden" style="display:none">
-                        <label>Ne pas remplir : <input name="bot-field"></label>
-                    </p>
+                <form action="https://formsubmit.co/romain.blachier@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nouveau message — France Formosa">
+                    <input type="hidden" name="_next" value="https://www.france-formosa.org/contact/?success=true">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name" required placeholder="Votre nom">
@@ -44,11 +45,11 @@
                         <label for="subject">Objet</label>
                         <select id="subject" name="subject" required>
                             <option value="">Sélectionnez un sujet</option>
-                            <option value="partenariat">Proposition de partenariat</option>
-                            <option value="adhesion">Adhésion</option>
-                            <option value="evenement">Événements</option>
-                            <option value="presse">Presse & Médias</option>
-                            <option value="autre">Autre</option>
+                            <option value="Proposition de partenariat">Proposition de partenariat</option>
+                            <option value="Adhésion">Adhésion</option>
+                            <option value="Événements">Événements</option>
+                            <option value="Presse & Médias">Presse & Médias</option>
+                            <option value="Autre">Autre</option>
                         </select>
                     </div>
                     <div class="form-group">
