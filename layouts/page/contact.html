@@ -9,8 +9,8 @@
     <div class="container">
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Restons en contact</h3>
-                <p>Vous souhaitez en savoir plus sur nos activités, proposer un partenariat ou rejoindre notre réseau ? N'hésitez pas à nous écrire.</p>
+                <h3>{{ i18n "contact_title" }}</h3>
+                <p>{{ i18n "contact_desc" }}</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
@@ -30,33 +30,33 @@
                     <input type="hidden" name="_template" value="table">
                     <input type="text" name="_honey" style="display:none">
                     <div class="form-group">
-                        <label for="name">Nom complet</label>
-                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                        <label for="name">{{ i18n "form_name" }}</label>
+                        <input type="text" id="name" name="name" required placeholder="{{ i18n "form_name_ph" }}">
                     </div>
                     <div class="form-group">
-                        <label for="email">Adresse e-mail</label>
-                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                        <label for="email">{{ i18n "form_email" }}</label>
+                        <input type="email" id="email" name="email" required placeholder="{{ i18n "form_email_ph" }}">
                     </div>
                     <div class="form-group">
-                        <label for="organization">Organisation</label>
-                        <input type="text" id="organization" name="organization" placeholder="Votre organisation (optionnel)">
+                        <label for="organization">{{ i18n "form_org" }}</label>
+                        <input type="text" id="organization" name="organization" placeholder="{{ i18n "form_org_ph" }}">
                     </div>
                     <div class="form-group">
-                        <label for="subject">Objet</label>
+                        <label for="subject">{{ i18n "form_subject" }}</label>
                         <select id="subject" name="subject" required>
-                            <option value="">Sélectionnez un sujet</option>
-                            <option value="Proposition de partenariat">Proposition de partenariat</option>
-                            <option value="Adhésion">Adhésion</option>
-                            <option value="Événements">Événements</option>
-                            <option value="Presse & Médias">Presse & Médias</option>
-                            <option value="Autre">Autre</option>
+                            <option value="">{{ i18n "form_subject_default" }}</option>
+                            <option value="{{ i18n "form_subject_partnership" }}">{{ i18n "form_subject_partnership" }}</option>
+                            <option value="{{ i18n "form_subject_membership" }}">{{ i18n "form_subject_membership" }}</option>
+                            <option value="{{ i18n "form_subject_events" }}">{{ i18n "form_subject_events" }}</option>
+                            <option value="{{ i18n "form_subject_press" }}">{{ i18n "form_subject_press" }}</option>
+                            <option value="{{ i18n "form_subject_other" }}">{{ i18n "form_subject_other" }}</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                        <label for="message">{{ i18n "form_message" }}</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="{{ i18n "form_message_ph" }}"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full">Envoyer le message</button>
+                    <button type="submit" class="btn btn-primary btn-full">{{ i18n "form_submit" }}</button>
                 </form>
             </div>
         </div>

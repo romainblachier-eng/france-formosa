@@ -1,36 +1,95 @@
 baseURL = "https://www.france-formosa.org/"
-languageCode = "fr-FR"
 title = "France Formosa"
-defaultContentLanguage = "fr"
 enableRobotsTXT = true
-
-[params]
-  description = "Dédié aux relations franco-taïwanaises"
-  author = "France Formosa"
+defaultContentLanguage = "fr"
+defaultContentLanguageInSubdir = false
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
 
-[menu]
-  [[menu.main]]
-    name = "Accueil"
-    url = "/"
+[languages]
+  [languages.fr]
+    languageCode = "fr-FR"
+    languageName = "Français"
     weight = 1
-  [[menu.main]]
-    name = "Notre mission"
-    url = "/mission/"
+    [languages.fr.params]
+      description = "Dédié aux relations franco-taïwanaises"
+      author = "France Formosa"
+    [[languages.fr.menus.main]]
+      name = "Accueil"
+      url = "/"
+      weight = 1
+    [[languages.fr.menus.main]]
+      name = "Notre mission"
+      url = "/mission/"
+      weight = 2
+    [[languages.fr.menus.main]]
+      name = "Nos axes"
+      url = "/axes/"
+      weight = 3
+    [[languages.fr.menus.main]]
+      name = "Publications"
+      url = "/publications/"
+      weight = 4
+    [[languages.fr.menus.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 5
+
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
     weight = 2
-  [[menu.main]]
-    name = "Nos axes"
-    url = "/axes/"
+    [languages.en.params]
+      description = "Dedicated to Franco-Taiwanese relations"
+      author = "France Formosa"
+    [[languages.en.menus.main]]
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menus.main]]
+      name = "Our mission"
+      url = "/mission/"
+      weight = 2
+    [[languages.en.menus.main]]
+      name = "Focus areas"
+      url = "/axes/"
+      weight = 3
+    [[languages.en.menus.main]]
+      name = "Publications"
+      url = "/publications/"
+      weight = 4
+    [[languages.en.menus.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 5
+
+  [languages.zh-hant]
+    languageCode = "zh-Hant"
+    languageName = "繁體中文"
     weight = 3
-  [[menu.main]]
-    name = "Publications"
-    url = "/publications/"
-    weight = 4
-  [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    weight = 5
+    [languages.zh-hant.params]
+      description = "致力於法臺關係"
+      author = "France Formosa"
+    [[languages.zh-hant.menus.main]]
+      name = "首頁"
+      url = "/"
+      weight = 1
+    [[languages.zh-hant.menus.main]]
+      name = "我們的使命"
+      url = "/mission/"
+      weight = 2
+    [[languages.zh-hant.menus.main]]
+      name = "工作領域"
+      url = "/axes/"
+      weight = 3
+    [[languages.zh-hant.menus.main]]
+      name = "出版物"
+      url = "/publications/"
+      weight = 4
+    [[languages.zh-hant.menus.main]]
+      name = "聯絡我們"
+      url = "/contact/"
+      weight = 5

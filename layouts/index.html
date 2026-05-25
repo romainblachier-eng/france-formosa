@@ -3,12 +3,12 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <p class="hero-label">Diplomatie culturelle franco-taïwanaise</p>
-            <h1>Renforcer les liens entre <em>la France</em> et <em>Taïwan</em></h1>
-            <p class="hero-subtitle">Association de paradiplomatie culturelle au service des liens entre la France et Taïwan.</p>
+            <p class="hero-label">{{ i18n "hero_label" }}</p>
+            <h1>{{ i18n "hero_title" | safeHTML }}</h1>
+            <p class="hero-subtitle">{{ i18n "hero_subtitle" }}</p>
             <div class="hero-actions">
-                <a href="/mission/" class="btn btn-primary">Découvrir notre mission</a>
-                <a href="/contact/" class="btn btn-outline">Nous contacter</a>
+                <a href="{{ "mission/" | relLangURL }}" class="btn btn-primary">{{ i18n "btn_discover" }}</a>
+                <a href="{{ "contact/" | relLangURL }}" class="btn btn-outline">{{ i18n "btn_contact" }}</a>
             </div>
         </div>
     </div>
@@ -19,20 +19,20 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat">
-                <span class="stat-number">2</span>
-                <span class="stat-label">Missions officielles sous l'égide du MOFA</span>
+                <span class="stat-number">{{ i18n "stat_1_number" }}</span>
+                <span class="stat-label">{{ i18n "stat_1_label" }}</span>
             </div>
             <div class="stat">
-                <span class="stat-number">10+</span>
-                <span class="stat-label">Revues de référence (Conflits, Taipei Times, Taiwan Insight)</span>
+                <span class="stat-number">{{ i18n "stat_2_number" }}</span>
+                <span class="stat-label">{{ i18n "stat_2_label" }}</span>
             </div>
             <div class="stat">
-                <span class="stat-number">2008</span>
-                <span class="stat-label">Première mission diplomatique à Taïwan</span>
+                <span class="stat-number">{{ i18n "stat_3_number" }}</span>
+                <span class="stat-label">{{ i18n "stat_3_label" }}</span>
             </div>
             <div class="stat">
-               <span class="stat-number">Depuis 2008</span>
-<span class="stat-label">Des actions organisées</span>
+                <span class="stat-number">{{ i18n "stat_4_number" }}</span>
+                <span class="stat-label">{{ i18n "stat_4_label" }}</span>
             </div>
         </div>
     </div>
@@ -42,37 +42,37 @@
 <section class="axes">
     <div class="container">
         <div class="section-header">
-            <p class="section-label">Nos domaines d'action</p>
-            <h2>Une approche pluridisciplinaire des relations franco-taïwanaises</h2>
+            <p class="section-label">{{ i18n "section_areas_label" }}</p>
+            <h2>{{ i18n "section_areas_title" }}</h2>
         </div>
         <div class="axes-grid">
             <div class="axe-card">
                 <div class="axe-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
                 </div>
-                <h3>Production intellectuelle</h3>
-                <p>Publications dans des revues de référence et conférences sur la géopolitique taïwanaise.</p>
+                <h3>{{ i18n "axe_1_title" }}</h3>
+                <p>{{ i18n "axe_1_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 003 12c0-1.97.633-3.793 1.708-5.272"/></svg>
                 </div>
-                <h3>Diplomatie de terrain</h3>
-                <p>Missions officielles et relations suivies avec les représentations taïwanaises en France.</p>
+                <h3>{{ i18n "axe_2_title" }}</h3>
+                <p>{{ i18n "axe_2_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
                 </div>
-                <h3>Médiation culturelle</h3>
-                <p>Conférences, événements et initiatives pour la visibilité de Taïwan en France.</p>
+                <h3>{{ i18n "axe_3_title" }}</h3>
+                <p>{{ i18n "axe_3_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
                 </div>
-                <h3>Coopérations institutionnelles</h3>
-                <p>Partenariats avec les institutions culturelles taïwanaises.</p>
+                <h3>{{ i18n "axe_4_title" }}</h3>
+                <p>{{ i18n "axe_4_desc" }}</p>
             </div>
         </div>
     </div>
@@ -83,25 +83,25 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
-                <p class="section-label">Qui sommes-nous</p>
-                <h2>Un pont entre deux démocraties</h2>
-                <p>France Formosa réunit des chercheurs, des entrepreneurs, des diplomates et des citoyens engagés autour d'une conviction commune : les relations entre la France et Taïwan sont un levier stratégique pour l'avenir de l'Europe en Asie-Pacifique.</p>
-                <p>Notre association produit des analyses, organise des conférences et facilite les rencontres entre acteurs des deux pays.</p>
-                <a href="/mission/" class="btn btn-primary">En savoir plus</a>
+                <p class="section-label">{{ i18n "about_label" }}</p>
+                <h2>{{ i18n "about_title" }}</h2>
+                <p>{{ i18n "about_p1" }}</p>
+                <p>{{ i18n "about_p2" }}</p>
+                <a href="{{ "mission/" | relLangURL }}" class="btn btn-primary">{{ i18n "btn_learn_more" }}</a>
             </div>
             <div class="about-visual">
                 <div class="about-card-stack">
                     <div class="about-card">
-                        <h4>Recherche</h4>
-                        <p>Publications et notes d'analyse sur les enjeux franco-taïwanais</p>
+                        <h4>{{ i18n "about_card_1_title" }}</h4>
+                        <p>{{ i18n "about_card_1_desc" }}</p>
                     </div>
                     <div class="about-card">
-                        <h4>Événements</h4>
-                        <p>Conférences, séminaires et tables rondes avec des experts</p>
+                        <h4>{{ i18n "about_card_2_title" }}</h4>
+                        <p>{{ i18n "about_card_2_desc" }}</p>
                     </div>
                     <div class="about-card">
-                        <h4>Réseau</h4>
-                        <p>Mise en relation d'acteurs clés des deux pays</p>
+                        <h4>{{ i18n "about_card_3_title" }}</h4>
+                        <p>{{ i18n "about_card_3_desc" }}</p>
                     </div>
                 </div>
             </div>
@@ -112,9 +112,9 @@
 <!-- CTA -->
 <section class="cta">
     <div class="container">
-        <h2>Rejoignez France Formosa</h2>
-        <p>Participez à la construction d'un dialogue franco-taïwanais fort et durable.</p>
-        <a href="/contact/" class="btn btn-white">Nous contacter</a>
+        <h2>{{ i18n "cta_title" }}</h2>
+        <p>{{ i18n "cta_subtitle" }}</p>
+        <a href="{{ "contact/" | relLangURL }}" class="btn btn-white">{{ i18n "btn_contact" }}</a>
     </div>
 </section>
 {{ end }}

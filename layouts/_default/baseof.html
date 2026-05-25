@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ .Site.LanguageCode }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}France Formosa — Franco-taïwanais{{ else }}{{ .Title }} — France Formosa{{ end }}</title>
+    <title>{{ if .IsHome }}France Formosa — {{ .Site.Params.description }}{{ else }}{{ .Title }} — France Formosa{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,37 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">
+            <a href="{{ .Site.Home.RelPermalink }}" class="logo">
                 <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
             </a>
-            <button class="menu-toggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-            <nav class="main-nav">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
-                {{ end }}
-            </nav>
+            <div class="header-right">
+                <nav class="main-nav">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">{{ .Name }}</a>
+                    {{ end }}
+                </nav>
+                <div class="lang-switcher">
+                    <button class="lang-btn" aria-label="Language">
+                        {{ if eq .Site.Language.Lang "fr" }}FR{{ else if eq .Site.Language.Lang "en" }}EN{{ else }}中文{{ end }}
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        {{ if .IsTranslated }}
+                            {{ range .Translations }}
+                            <a href="{{ .RelPermalink }}" class="lang-option">{{ .Language.LanguageName }}</a>
+                            {{ end }}
+                            <a href="{{ .RelPermalink }}" class="lang-option active">{{ .Language.LanguageName }}</a>
+                        {{ else }}
+                            {{ range .Site.Languages }}
+                            <a href="{{ .Lang | default "/" }}{{ if ne .Lang "fr" }}/{{ .Lang }}/{{ end }}" class="lang-option{{ if eq .Lang $.Site.Language.Lang }} active{{ end }}">{{ .LanguageName }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -38,21 +58,21 @@
                     <div class="footer-logo">
                         <span class="logo-france">France</span><span class="logo-formosa">Formosa</span>
                     </div>
-                    <p class="footer-tagline">Paradiplomatie culturelle au service des liens entre la France et Taïwan.</p>
+                    <p class="footer-tagline">{{ i18n "footer_tagline" }}</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Navigation</h4>
+                    <h4>{{ i18n "footer_nav" }}</h4>
                     {{ range .Site.Menus.main }}
                     <a href="{{ .URL }}">{{ .Name }}</a>
                     {{ end }}
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
-                    <a href="/contact/">Nous contacter</a>
-                   
+                    <h4>{{ i18n "footer_contact" }}</h4>
+                    <a href="{{ "contact/" | relLangURL }}">{{ i18n "footer_contact_link" }}</a>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ now.Year }} France Formosa. Tous droits réservés.</p>
+                <p>&copy; {{ now.Year }} France Formosa. {{ i18n "footer_rights" }}</p>
             </div>
         </div>
     </footer>
@@ -62,6 +82,26 @@
             document.querySelector('.main-nav').classList.toggle('open');
             this.classList.toggle('active');
         });
+        document.querySelector('.lang-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.parentElement.classList.toggle('open');
+        });
+        document.addEventListener('click', function() {
+            document.querySelector('.lang-switcher').classList.remove('open');
+        });
+        (function() {
+            var path = window.location.pathname;
+            if (path !== '/' && path !== '/index.html') return;
+            if (localStorage.getItem('ff-lang-chosen')) return;
+            var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (lang.startsWith('zh')) {
+                localStorage.setItem('ff-lang-chosen', '1');
+                window.location.replace('/zh-hant/');
+            } else if (!lang.startsWith('fr')) {
+                localStorage.setItem('ff-lang-chosen', '1');
+                window.location.replace('/en/');
+            }
+        })();
     </script>
 </body>
 </html>

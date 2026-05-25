@@ -1,0 +1,127 @@
+# Homepage
+[hero_label]
+other = "法臺文化外交"
+[hero_title]
+other = "加強<em>法國</em>與<em>臺灣</em>之間的連結"
+[hero_subtitle]
+other = "致力於促進法國與臺灣之間聯繫的文化準外交協會。"
+[btn_discover]
+other = "了解我們的使命"
+[btn_contact]
+other = "聯絡我們"
+
+[stat_1_number]
+other = "2"
+[stat_1_label]
+other = "在外交部指導下的官方訪問團"
+[stat_2_number]
+other = "10+"
+[stat_2_label]
+other = "權威刊物（Conflits、Taipei Times、Taiwan Insight）"
+[stat_3_number]
+other = "2008"
+[stat_3_label]
+other = "首次赴臺外交訪問"
+[stat_4_number]
+other = "自 2008 年起"
+[stat_4_label]
+other = "持續推動各項行動"
+
+[section_areas_label]
+other = "工作領域"
+[section_areas_title]
+other = "法臺關係的多領域方針"
+[axe_1_title]
+other = "學術研究"
+[axe_1_desc]
+other = "在權威期刊發表文章，舉辦臺灣地緣政治相關研討會。"
+[axe_2_title]
+other = "實地外交"
+[axe_2_desc]
+other = "官方訪問團及與駐法臺灣代表機構的持續交流。"
+[axe_3_title]
+other = "文化推廣"
+[axe_3_desc]
+other = "研討會、活動及各類倡議，提升臺灣在法國的能見度。"
+[axe_4_title]
+other = "機構合作"
+[axe_4_desc]
+other = "與臺灣文化機構建立夥伴關係。"
+
+[about_label]
+other = "關於我們"
+[about_title]
+other = "兩個民主國家之間的橋樑"
+[about_p1]
+other = "France Formosa 匯集了研究人員、企業家、外交官及熱心公民，共同秉持一個信念：法臺關係是歐洲在亞太地區未來發展的戰略槓桿。"
+[about_p2]
+other = "我們的協會進行分析研究、舉辦研討會，並促進兩國關鍵人士之間的交流。"
+[btn_learn_more]
+other = "了解更多"
+[about_card_1_title]
+other = "研究"
+[about_card_1_desc]
+other = "法臺議題的出版物與政策分析"
+[about_card_2_title]
+other = "活動"
+[about_card_2_desc]
+other = "與專家學者舉辦的研討會、講座及圓桌會議"
+[about_card_3_title]
+other = "網絡"
+[about_card_3_desc]
+other = "串聯兩國關鍵人士"
+
+[cta_title]
+other = "加入 France Formosa"
+[cta_subtitle]
+other = "共同打造堅實而持久的法臺對話。"
+
+# Contact page
+[contact_title]
+other = "與我們聯繫"
+[contact_desc]
+other = "想了解更多我們的活動、提出合作建議或加入我們的網絡？歡迎來信。"
+[form_name]
+other = "姓名"
+[form_name_ph]
+other = "您的姓名"
+[form_email]
+other = "電子郵件"
+[form_email_ph]
+other = "your@email.com"
+[form_org]
+other = "機構"
+[form_org_ph]
+other = "您的機構（選填）"
+[form_subject]
+other = "主旨"
+[form_subject_default]
+other = "請選擇主旨"
+[form_subject_partnership]
+other = "合作提案"
+[form_subject_membership]
+other = "加入會員"
+[form_subject_events]
+other = "活動"
+[form_subject_press]
+other = "媒體聯繫"
+[form_subject_other]
+other = "其他"
+[form_message]
+other = "留言內容"
+[form_message_ph]
+other = "請輸入您的留言..."
+[form_submit]
+other = "送出訊息"
+
+# Footer
+[footer_tagline]
+other = "致力於促進法國與臺灣聯繫的文化準外交。"
+[footer_nav]
+other = "導覽"
+[footer_contact]
+other = "聯絡"
+[footer_contact_link]
+other = "聯絡我們"
+[footer_rights]
+other = "版權所有。"
