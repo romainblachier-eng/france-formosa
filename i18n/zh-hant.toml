@@ -129,3 +129,5 @@ other = "聯絡"
 other = "聯絡我們"
 [footer_rights]
 other = "版權所有。"
+[form_captcha_error]
+other = "請先完成驗證碼再提交。"

@@ -129,3 +129,5 @@ other = "Contact"
 other = "Nous contacter"
 [footer_rights]
 other = "Tous droits réservés."
+[form_captcha_error]
+other = "Veuillez valider le captcha avant d'envoyer."

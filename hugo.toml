@@ -4,6 +4,9 @@ enableRobotsTXT = true
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 
+[params]
+  recaptchaSiteKey = "6LfSVAMtAAAAAGmAop5xXHnu_MR3fa5kQ6LdXp7m"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

@@ -456,6 +456,13 @@ body {
 
 .form-group textarea { resize: vertical; }
 
+.recaptcha-wrapper { margin-bottom: 20px; }
+.recaptcha-error {
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
 /* === Publications === */
 .publication-card {
     padding: 24px 0;
