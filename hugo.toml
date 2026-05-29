@@ -5,7 +5,7 @@ defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 
 [params]
-  recaptchaSiteKey = "6LfSVAMtAAAAAGmAop5xXHnu_MR3fa5kQ6LdXp7m"
+  recaptchaSiteKey = "6LdxVgMtAAAAAEL9aOLZHH9aO8j63isn3XwxOQsT"
 
 [markup]
   [markup.goldmark]
