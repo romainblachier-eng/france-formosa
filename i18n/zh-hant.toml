@@ -76,6 +76,24 @@ other = "加入 France Formosa"
 [cta_subtitle]
 other = "共同打造堅實而持久的法臺對話。"
 
+# Date format
+[date_format]
+other = "2006年01月"
+
+# Press section
+[press_label]
+other = "France Formosa 媒體報導"
+[press_title]
+other = "最新媒體文章"
+[press_read]
+other = "閱讀文章"
+[press_see_all]
+other = "查看所有報導"
+[press_page_title]
+other = "France Formosa 媒體報導"
+[press_page_subtitle]
+other = "我們在法國及國際媒體上的文章。"
+
 # Contact page
 [contact_title]
 other = "與我們聯繫"

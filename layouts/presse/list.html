@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <p class="hero-label">France Formosa</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+<section class="press-page">
+    <div class="container container-narrow">
+        <div class="press-articles">
+            {{ range sort .Pages "Date" "desc" }}
+            <article class="press-article">
+                <div class="press-article-meta">
+                    <span class="press-badge">{{ .Params.publication }}</span>
+                    <time>{{ .Date.Format (i18n "date_format") }}</time>
+                    {{ if .Params.press_lang }}<span class="press-lang-tag">{{ .Params.press_lang }}</span>{{ end }}
+                </div>
+                <h3>
+                    {{ if .Params.externalURL }}
+                    <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
+                    {{ else }}
+                    {{ .Title }}
+                    {{ end }}
+                </h3>
+                <p>{{ .Summary }}</p>
+                {{ if .Params.externalURL }}
+                <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="press-read-link">
+                    {{ i18n "press_read" }}
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

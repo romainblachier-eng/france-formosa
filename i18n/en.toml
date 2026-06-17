@@ -76,6 +76,24 @@ other = "Join France Formosa"
 [cta_subtitle]
 other = "Help build a strong and lasting Franco-Taiwanese dialogue."
 
+# Date format
+[date_format]
+other = "January 2006"
+
+# Press section
+[press_label]
+other = "France Formosa in the press"
+[press_title]
+other = "Our latest media contributions"
+[press_read]
+other = "Read the article"
+[press_see_all]
+other = "See all our press coverage"
+[press_page_title]
+other = "France Formosa in the press"
+[press_page_subtitle]
+other = "Our contributions in French and international media."
+
 # Contact page
 [contact_title]
 other = "Get in touch"

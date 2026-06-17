@@ -37,9 +37,13 @@ defaultContentLanguageInSubdir = false
       url = "/publications/"
       weight = 4
     [[languages.fr.menus.main]]
+      name = "Dans la presse"
+      url = "/presse/"
+      weight = 5
+    [[languages.fr.menus.main]]
       name = "Contact"
       url = "/contact/"
-      weight = 5
+      weight = 6
 
   [languages.en]
     languageCode = "en"
@@ -65,9 +69,13 @@ defaultContentLanguageInSubdir = false
       url = "/publications/"
       weight = 4
     [[languages.en.menus.main]]
+      name = "In the press"
+      url = "/presse/"
+      weight = 5
+    [[languages.en.menus.main]]
       name = "Contact"
       url = "/contact/"
-      weight = 5
+      weight = 6
 
   [languages.zh-hant]
     languageCode = "zh-Hant"
@@ -93,6 +101,10 @@ defaultContentLanguageInSubdir = false
       url = "/publications/"
       weight = 4
     [[languages.zh-hant.menus.main]]
+      name = "媒體報導"
+      url = "/presse/"
+      weight = 5
+    [[languages.zh-hant.menus.main]]
       name = "聯絡我們"
       url = "/contact/"
-      weight = 5
+      weight = 6

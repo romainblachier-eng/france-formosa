@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container">
+        <p class="hero-label">{{ .Params.publication }}</p>
+        <h1>{{ .Title }}</h1>
+        <p class="page-subtitle">{{ .Date.Format (i18n "date_format") }}</p>
+    </div>
+</section>
+<section class="page-content">
+    <div class="container container-narrow">
+        <p style="color:var(--gray-600); font-size:1.05rem; margin-bottom:40px;">{{ .Summary }}</p>
+        {{ if .Params.externalURL }}
+        <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            {{ i18n "press_read" }} — {{ .Params.publication }}
+        </a>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
