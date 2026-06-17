@@ -39,6 +39,38 @@
     </div>
 </section>
 
+<!-- France Formosa dans la presse -->
+<section class="press-preview">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">{{ i18n "press_label" }}</p>
+            <h2>{{ i18n "press_title" }}</h2>
+        </div>
+        <div class="press-grid">
+            {{ $pressePages := where .Site.RegularPages "Section" "presse" }}
+            {{ range first 2 (sort $pressePages "Date" "desc") }}
+            <article class="press-card">
+                <div class="press-meta">
+                    <span class="press-badge">{{ .Params.publication }}</span>
+                    <time>{{ .Date.Format (i18n "date_format") }}</time>
+                </div>
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Summary }}</p>
+                {{ if .Params.externalURL }}
+                <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="press-read-link">
+                    {{ i18n "press_read" }}
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+        <div class="press-footer">
+            <a href="{{ "presse/" | relLangURL }}" class="btn btn-outline-dark">{{ i18n "press_see_all" }}</a>
+        </div>
+    </div>
+</section>
+
 <!-- Axes de travail -->
 <section class="axes">
     <div class="container">
@@ -106,38 +138,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- France Formosa dans la presse -->
-<section class="press-preview">
-    <div class="container">
-        <div class="section-header">
-            <p class="section-label">{{ i18n "press_label" }}</p>
-            <h2>{{ i18n "press_title" }}</h2>
-        </div>
-        <div class="press-grid">
-            {{ $pressePages := where .Site.RegularPages "Section" "presse" }}
-            {{ range first 2 (sort $pressePages "Date" "desc") }}
-            <article class="press-card">
-                <div class="press-meta">
-                    <span class="press-badge">{{ .Params.publication }}</span>
-                    <time>{{ .Date.Format (i18n "date_format") }}</time>
-                </div>
-                <h3>{{ .Title }}</h3>
-                <p>{{ .Summary }}</p>
-                {{ if .Params.externalURL }}
-                <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="press-read-link">
-                    {{ i18n "press_read" }}
-                    <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
-                </a>
-                {{ end }}
-            </article>
-            {{ end }}
-        </div>
-        <div class="press-footer">
-            <a href="{{ "presse/" | relLangURL }}" class="btn btn-outline-dark">{{ i18n "press_see_all" }}</a>
         </div>
     </div>
 </section>
