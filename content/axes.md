@@ -31,6 +31,14 @@ France Formosa développe des projets de conférences, des partenariats événem
 
 Nous organisons et participons à des événements qui mettent en lumière la richesse culturelle taïwanaise auprès du public français.
 
+### Taïwan en Avignon
+
+Des compagnies taïwanaises sont présentes chaque année au **Festival Off d'Avignon** depuis 2007, portées par le ministère taïwanais de la Culture et le Centre culturel de Taïwan à Paris. Juillet 2026 a marqué les vingt ans de cette présence continue. En 2024, Taïwan avait été le premier pays invité d'honneur du Off.
+
+France Formosa a suivi l'édition 2026, du 4 au 25 juillet, et pris part au dîner d'anniversaire organisé le 10 juillet par le Centre culturel de Taïwan à Paris. La sélection réunissait cette année quatre compagnies, toutes de danse contemporaine.
+
+Être sur place nourrit notre travail d'analyse : ce qui se joue à Avignon dépasse la programmation. Entre les pressions exercées sur la façon de nommer Taïwan et le poids de la langue de travail du pays hôte dans ce qu'une compagnie peut y présenter, le festival est un bon poste d'observation de la diplomatie culturelle taïwanaise en Europe.
+
 ---
 
 ## Prospection de coopérations institutionnelles

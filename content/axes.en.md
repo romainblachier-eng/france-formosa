@@ -31,6 +31,14 @@ France Formosa develops conference projects, event partnerships and initiatives 
 
 We organise and participate in events that highlight the richness of Taiwanese culture for French audiences.
 
+### Taiwan in Avignon
+
+Taiwanese companies have appeared every year at the **Festival Off d'Avignon** since 2007, supported by Taiwan's Ministry of Culture and the Taiwan Cultural Centre in Paris. July 2026 marked twenty years of that unbroken presence. In 2024, Taiwan was the Off's first-ever guest country of honour.
+
+France Formosa followed the 2026 edition, which ran from 4 to 25 July, and attended the anniversary dinner hosted on 10 July by the Taiwan Cultural Centre in Paris. This year's line-up brought together four companies, all working in contemporary dance.
+
+Being there feeds our analytical work: what is at stake in Avignon goes beyond the programme. Between the pressure exerted on how Taiwan may be named and the weight of the host country's working language in what a company can actually present, the festival is a useful vantage point on Taiwanese cultural diplomacy in Europe.
+
 ---
 
 ## Institutional cooperation
