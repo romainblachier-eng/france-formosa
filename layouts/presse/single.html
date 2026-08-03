@@ -3,7 +3,7 @@
     <div class="container">
         <p class="hero-label">{{ .Params.publication }}</p>
         <h1>{{ .Title }}</h1>
-        <p class="page-subtitle">{{ .Date.Format (i18n "date_format") }}</p>
+        <p class="page-subtitle">{{ time.Format (i18n "date_format") .Date }}</p>
     </div>
 </section>
 <section class="page-content">

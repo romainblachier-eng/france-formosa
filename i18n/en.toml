@@ -10,22 +10,18 @@ other = "Discover our mission"
 [btn_contact]
 other = "Contact us"
 
-[stat_1_number]
-other = "2"
 [stat_1_label]
-other = "Official missions under the auspices of MOFA"
-[stat_2_number]
-other = "10+"
+other = "Press and journal contributions"
 [stat_2_label]
-other = "Leading publications (Conflits, Taipei Times, Taiwan Insight)"
+other = "French, Taiwanese and international outlets"
 [stat_3_number]
 other = "2008"
 [stat_3_label]
 other = "First diplomatic mission to Taiwan"
 [stat_4_number]
-other = "Since 2008"
+other = "3"
 [stat_4_label]
-other = "Ongoing initiatives"
+other = "Publishing languages: French, English, Traditional Chinese"
 
 [section_areas_label]
 other = "Our focus areas"
@@ -82,13 +78,13 @@ other = "January 2006"
 
 # Press section
 [press_label]
-other = "France Formosa in the press"
+other = "Featured"
 [press_title]
-other = "Our latest media contributions"
+other = "Our three most recent pieces"
 [press_read]
 other = "Read the article"
 [press_see_all]
-other = "See all our press coverage"
+other = "See all our contributions"
 [press_page_title]
 other = "France Formosa in the press"
 [press_page_subtitle]

@@ -1,13 +1,16 @@
 (function () {
   'use strict';
 
-  // Palette drapeau taïwanais + blanc
+  // Couleur de fond de la bannière (--ink)
+  const INK = { r: 14, g: 20, b: 32 };
+
+  // Palette accordée au système de design : rouge, papier, bleu d'archive
   const TAIWAN_COLORS = [
-    { r: 196, g: 32,  b: 50  }, // rouge Taiwan
-    { r: 0,   g: 58,  b: 140 }, // bleu Taiwan
-    { r: 255, g: 255, b: 255 }, // blanc
-    { r: 196, g: 32,  b: 50  }, // rouge
-    { r: 0,   g: 58,  b: 140 }, // bleu
+    { r: 196, g: 62,  b: 74  }, // rouge
+    { r: 90,  g: 130, b: 200 }, // bleu
+    { r: 251, g: 250, b: 247 }, // papier
+    { r: 196, g: 62,  b: 74  }, // rouge
+    { r: 90,  g: 130, b: 200 }, // bleu
   ];
 
   class Particle {
@@ -20,8 +23,8 @@
       this.maxSpeed = 1.0;
       this.maxForce = 0.1;
       this.isKilled = false;
-      this.startColor = { r: 15, g: 26, b: 46 };
-      this.targetColor = { r: 15, g: 26, b: 46 };
+      this.startColor = { r: INK.r, g: INK.g, b: INK.b };
+      this.targetColor = { r: INK.r, g: INK.g, b: INK.b };
       this.colorWeight = 0;
       this.colorBlendRate = 0.01;
     }
@@ -73,7 +76,7 @@
           g: this.startColor.g + (this.targetColor.g - this.startColor.g) * this.colorWeight,
           b: this.startColor.b + (this.targetColor.b - this.startColor.b) * this.colorWeight,
         };
-        this.targetColor = { r: 15, g: 26, b: 46 };
+        this.targetColor = { r: INK.r, g: INK.g, b: INK.b };
         this.colorWeight = 0;
         this.isKilled = true;
       }
@@ -99,11 +102,13 @@
     var particles = [];
     var pixelSteps = 6;
     var animId;
+    var reduceMotion = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function resize() {
       var parent = canvas.parentElement;
-      var w = parent ? parent.offsetWidth : window.innerWidth;
-      var h = parent ? parent.offsetHeight : 460;
+      var w = (parent ? parent.offsetWidth : 0) || canvas.clientWidth || window.innerWidth;
+      var h = (parent ? parent.offsetHeight : 0) || canvas.clientHeight || 460;
       if (w < 10) w = 1000;
       if (h < 100) h = 460;
       canvas.width = w;
@@ -111,10 +116,45 @@
     }
 
     resize();
-    window.addEventListener('resize', function () {
+
+    // Recompose le mot quand la géométrie change : redimensionnement, mais
+    // aussi arrivée des polices web, qui modifie la hauteur de la bannière.
+    var refreshTimer;
+    function refresh() {
       resize();
       nextWord(WORDS[wordIndex], wordIndex);
-    });
+      if (reduceMotion) drawStatic();
+    }
+
+    function scheduleRefresh() {
+      clearTimeout(refreshTimer);
+      refreshTimer = setTimeout(refresh, 150);
+    }
+
+    window.addEventListener('resize', scheduleRefresh);
+
+    if (window.ResizeObserver) {
+      new ResizeObserver(scheduleRefresh).observe(canvas);
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleRefresh);
+    }
+
+    // Mouvement réduit : on compose le mot une fois, sans animation
+    function drawStatic() {
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'rgb(' + INK.r + ',' + INK.g + ',' + INK.b + ')';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        if (p.isKilled) continue;
+        p.pos.x = p.target.x;
+        p.pos.y = p.target.y;
+        p.colorWeight = 1;
+        p.draw(ctx);
+      }
+    }
 
     function nextWord(word, colorIndex) {
       var off = document.createElement('canvas');
@@ -127,7 +167,7 @@
       var fontSize = Math.max(36, Math.min(maxFont, lenFont));
 
       octx.fillStyle = 'white';
-      octx.font = 'bold ' + fontSize + 'px "Playfair Display", Georgia, serif';
+      octx.font = '600 ' + fontSize + 'px "Crimson Pro", Georgia, serif';
       octx.textAlign = 'center';
       octx.textBaseline = 'middle';
       octx.fillText(word, canvas.width / 2, canvas.height / 2);
@@ -185,8 +225,8 @@
 
     function animate() {
       var ctx = canvas.getContext('2d');
-      // Motion blur sur fond navy
-      ctx.fillStyle = 'rgba(15,26,46,0.18)';
+      // Traînée sur le fond encre
+      ctx.fillStyle = 'rgba(14,20,32,0.18)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (var i = particles.length - 1; i >= 0; i--) {
@@ -209,7 +249,11 @@
     }
 
     nextWord(WORDS[0], 0);
-    animate();
+    if (reduceMotion) {
+      drawStatic();
+    } else {
+      animate();
+    }
   }
 
   document.addEventListener('DOMContentLoaded', initParticles);

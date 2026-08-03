@@ -10,22 +10,18 @@ other = "Découvrir notre mission"
 [btn_contact]
 other = "Nous contacter"
 
-[stat_1_number]
-other = "2"
 [stat_1_label]
-other = "Missions officielles sous l'égide du MOFA"
-[stat_2_number]
-other = "10+"
+other = "Parutions dans la presse et les revues"
 [stat_2_label]
-other = "Revues de référence (Conflits, Taipei Times, Taiwan Insight)"
+other = "Titres français, taïwanais et internationaux"
 [stat_3_number]
 other = "2008"
 [stat_3_label]
 other = "Première mission diplomatique à Taïwan"
 [stat_4_number]
-other = "Depuis 2008"
+other = "3"
 [stat_4_label]
-other = "Des actions organisées"
+other = "Langues de publication : français, anglais, chinois traditionnel"
 
 [section_areas_label]
 other = "Nos domaines d'action"
@@ -82,9 +78,9 @@ other = "January 2006"
 
 # Press section
 [press_label]
-other = "France Formosa dans la presse"
+other = "À la une"
 [press_title]
-other = "Nos dernières contributions médias"
+other = "Nos trois dernières parutions"
 [press_read]
 other = "Lire l'article"
 [press_see_all]

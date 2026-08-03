@@ -10,22 +10,18 @@ other = "了解我們的使命"
 [btn_contact]
 other = "聯絡我們"
 
-[stat_1_number]
-other = "2"
 [stat_1_label]
-other = "在外交部指導下的官方訪問團"
-[stat_2_number]
-other = "10+"
+other = "媒體與期刊發表"
 [stat_2_label]
-other = "權威刊物（Conflits、Taipei Times、Taiwan Insight）"
+other = "法國、臺灣及國際媒體"
 [stat_3_number]
 other = "2008"
 [stat_3_label]
 other = "首次赴臺外交訪問"
 [stat_4_number]
-other = "自 2008 年起"
+other = "3"
 [stat_4_label]
-other = "持續推動各項行動"
+other = "發表語言：法文、英文、繁體中文"
 
 [section_areas_label]
 other = "工作領域"
@@ -82,13 +78,13 @@ other = "2006年01月"
 
 # Press section
 [press_label]
-other = "France Formosa 媒體報導"
+other = "焦點"
 [press_title]
-other = "最新媒體文章"
+other = "最新三篇文章"
 [press_read]
 other = "閱讀文章"
 [press_see_all]
-other = "查看所有報導"
+other = "查看所有文章"
 [press_page_title]
 other = "France Formosa 媒體報導"
 [press_page_subtitle]

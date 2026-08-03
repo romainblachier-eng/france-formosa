@@ -14,7 +14,7 @@
             <article class="press-article">
                 <div class="press-article-meta">
                     <span class="press-badge">{{ .Params.publication }}</span>
-                    <time>{{ .Date.Format (i18n "date_format") }}</time>
+                    <time>{{ time.Format (i18n "date_format") .Date }}</time>
                     {{ if .Params.press_lang }}<span class="press-lang-tag">{{ .Params.press_lang }}</span>{{ end }}
                 </div>
                 <h3>

@@ -1,5 +1,9 @@
 {{ define "main" }}
-<!-- Hero avec effet particules -->
+{{ $presse := where .Site.RegularPages "Section" "presse" }}
+{{ $outlets := slice }}
+{{ range $presse }}{{ with .Params.publication }}{{ $outlets = $outlets | append . }}{{ end }}{{ end }}
+
+<!-- Bannière — lettres animées en fond -->
 <section class="hero hero-particle">
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
     <div class="container">
@@ -20,11 +24,11 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat">
-                <span class="stat-number">{{ i18n "stat_1_number" }}</span>
+                <span class="stat-number">{{ len $presse }}</span>
                 <span class="stat-label">{{ i18n "stat_1_label" }}</span>
             </div>
             <div class="stat">
-                <span class="stat-number">{{ i18n "stat_2_number" }}</span>
+                <span class="stat-number">{{ len (uniq $outlets) }}</span>
                 <span class="stat-label">{{ i18n "stat_2_label" }}</span>
             </div>
             <div class="stat">
@@ -39,34 +43,37 @@
     </div>
 </section>
 
-<!-- France Formosa dans la presse -->
+<!-- À la une — les trois dernières parutions -->
 <section class="press-preview">
     <div class="container">
         <div class="section-header">
             <p class="section-label">{{ i18n "press_label" }}</p>
             <h2>{{ i18n "press_title" }}</h2>
+            <a href="{{ "presse/" | relLangURL }}" class="section-link">{{ i18n "press_see_all" }}</a>
         </div>
         <div class="press-grid">
-            {{ $pressePages := where .Site.RegularPages "Section" "presse" }}
-            {{ range first 2 (sort $pressePages "Date" "desc") }}
+            {{ range $i, $p := first 3 (sort $presse "Date" "desc") }}
             <article class="press-card">
+                <span class="press-index">{{ printf "%02d" (add $i 1) }}</span>
                 <div class="press-meta">
-                    <span class="press-badge">{{ .Params.publication }}</span>
-                    <time>{{ .Date.Format (i18n "date_format") }}</time>
+                    <span class="press-badge">{{ $p.Params.publication }}</span>
+                    <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ time.Format (i18n "date_format") $p.Date }}</time>
+                    {{ with $p.Params.press_lang }}<span class="press-lang-tag">{{ . }}</span>{{ end }}
                 </div>
-                <h3>{{ .Title }}</h3>
-                <p>{{ .Summary }}</p>
-                {{ if .Params.externalURL }}
-                <a href="{{ .Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="press-read-link">
+                <h3>
+                    {{ if $p.Params.externalURL }}
+                    <a href="{{ $p.Params.externalURL }}" target="_blank" rel="noopener noreferrer">{{ $p.Title }}</a>
+                    {{ else }}{{ $p.Title }}{{ end }}
+                </h3>
+                <p>{{ $p.Summary }}</p>
+                {{ if $p.Params.externalURL }}
+                <a href="{{ $p.Params.externalURL }}" target="_blank" rel="noopener noreferrer" class="press-read-link">
                     {{ i18n "press_read" }}
                     <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/></svg>
                 </a>
                 {{ end }}
             </article>
             {{ end }}
-        </div>
-        <div class="press-footer">
-            <a href="{{ "presse/" | relLangURL }}" class="btn btn-outline-dark">{{ i18n "press_see_all" }}</a>
         </div>
     </div>
 </section>
@@ -81,29 +88,33 @@
         <div class="axes-grid">
             <div class="axe-card">
                 <div class="axe-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26" aria-hidden="true"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
                 </div>
+                <span class="axe-num">01</span>
                 <h3>{{ i18n "axe_1_title" }}</h3>
                 <p>{{ i18n "axe_1_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 003 12c0-1.97.633-3.793 1.708-5.272"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26" aria-hidden="true"><path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 003 12c0-1.97.633-3.793 1.708-5.272"/></svg>
                 </div>
+                <span class="axe-num">02</span>
                 <h3>{{ i18n "axe_2_title" }}</h3>
                 <p>{{ i18n "axe_2_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26" aria-hidden="true"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
                 </div>
+                <span class="axe-num">03</span>
                 <h3>{{ i18n "axe_3_title" }}</h3>
                 <p>{{ i18n "axe_3_desc" }}</p>
             </div>
             <div class="axe-card">
                 <div class="axe-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26" aria-hidden="true"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
                 </div>
+                <span class="axe-num">04</span>
                 <h3>{{ i18n "axe_4_title" }}</h3>
                 <p>{{ i18n "axe_4_desc" }}</p>
             </div>
@@ -142,7 +153,7 @@
     </div>
 </section>
 
-<!-- CTA -->
+<!-- Appel à l'action -->
 <section class="cta">
     <div class="container">
         <h2>{{ i18n "cta_title" }}</h2>

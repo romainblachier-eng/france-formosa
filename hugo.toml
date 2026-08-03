@@ -1,6 +1,9 @@
 baseURL = "https://www.france-formosa.org/"
 title = "France Formosa"
 enableRobotsTXT = true
+# Les tribunes portent la date de parution du titre, parfois en avance
+# d'un jour sur l'heure de Paris : sans cela elles seraient exclues du build.
+buildFuture = true
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 
